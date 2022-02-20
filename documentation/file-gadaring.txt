@@ -1,0 +1,55 @@
+Project Name: 	Daryab
+Version: 		0.1
+language: 		php
+databse:		MySQL
+start-time: 	24/MAY/2021
+deadline:		30/MAY/2021
+toal-time: 		7 days
+by: 			Alireza Mohseni
+compoany: 		ARATech
+
+-- ################ -- ################ --
+-- ################ -- ################ --
+
+# Daryab
+
+Table Name			Entities	Attributes		Datatype							key 			key
+Total Tables:
+					* users
+								_id				int(11)								PRIMARY KEY		Auto-incremant  NOT NULL
+								name			varchar(32)							NOT NULL
+								lastName		varchar(32)							NOT NULL
+								roll			enum('admin', 'found', 'lost')		NOT NULL 
+								usr				varchar(32)							NOT NULL
+								pwd				varchar(32)							NOT NULL
+								prfImg			varchar(16)							NOT NULL 		DEFAULT('defult.svg')
+								relateID		int(11)								Foreign Key
+								date			date()								NOT NULL
+						
+					* Item
+								_id				int(11)								PRIMARY KEY		Auto-incremant NOT NULL
+								name			varchar(32)							NOT NULL
+								lastName		varchar(32)							NOT NULL
+								describe		varchar(128)						NULL
+								type			enum('founded', 'Losted')
+								phone			int(10)								NOT NULL
+								email			varchar(64)							NULL
+								address			varchar(128)						NULL
+								from			varchar(128)						NOT NULL
+								date			date()								NOT NULL
+								cat_id			int(11)								FOREIGN KEY
+						
+					* cat
+								_id				int(11)								PRIMARY KEY 	Auto-incremant 
+								name			varchar(32)							NOT NULL
+								
+					* about		
+								cpName			varchar(32)							PRIMARY KEY
+								cpAddress		varchar(64)
+								cpAbout			varchar(128)
+								cpPhone			int(10)
+								social_id		varchar								FOREIGN KEY
+					* social 	
+								name			varchar(32)							PRIMARY KEY
+								path			varchar(64)
+								
